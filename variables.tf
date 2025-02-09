@@ -26,6 +26,12 @@ variable "private_subnet_cidr"{
 variable "ecr_repo_name"{
     description = "value of the ECR repository name"
     type = list(string)
-    default = ["user-service", "product-service", "order-service"]
+    default = ["user-service", "product-service", "order-service", "payment-service"]
 }
   
+
+variable "ecr_repo_url" {
+    description = "URL of the ECR repository"
+    type = string
+  
+}
