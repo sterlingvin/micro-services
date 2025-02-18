@@ -1,0 +1,8 @@
+#git ignore files are stated here
+.terraform/
+.terraform.lock.hcl
+*.tfstate*  # Ignore all files that begin with .tfstate
+*.tfvars*   # Ignore all files that begin with .tfvars
+*.tfplan    # Ignore all files that begin with .tfplan
+*.tfstate.backup
+*.tfstate.backup.*

@@ -1,7 +1,7 @@
 variable "aws_region" {
     description = "value of the region"
     type = string
-    default = "ca_cental-1"
+    default = "ca-central-1"
 }
 
 variable "vpc_cidr" {
@@ -33,5 +33,6 @@ variable "ecr_repo_name"{
 variable "ecr_repo_url" {
     description = "URL of the ECR repository"
     type = string
+    default = "851725517396.dkr.ecr.us-east-1.amazonaws.com/user-service"
   
 }
