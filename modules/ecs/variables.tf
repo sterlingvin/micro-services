@@ -17,5 +17,5 @@ variable "private_subnet_ids" {
 
 variable "ecr_repo_url"{
   description = "URL of the ECR repository"
-  type = list(string)
+  type = string
 }
