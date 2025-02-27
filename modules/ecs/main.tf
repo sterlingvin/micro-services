@@ -24,14 +24,13 @@ DEFINITION
 }
 
 resource "aws_ecs_service" "service" {
-  name = "user-service"
-  cluster = aws_ecs_cluster.cluster.id
+  name            = "user-service"
+  cluster         = aws_ecs_cluster.cluster.id
   task_definition = aws_ecs_task_definition.task.arn
-  desired_count = 1
-  launch_type = "EC2"  # or "FARGATE"
+  desired_count   = 1
+  launch_type     = "FARGATE"
   network_configuration {
-    subnets = module.vpc.public_subnet_ids
+    subnets         = var.private_subnet_ids # Use private subnets
     security_groups = [aws_security_group.ecs_service.id]
   }
-  depends_on = [aws_ecs_task_definition.task] 
 }
