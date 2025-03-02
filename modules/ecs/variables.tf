@@ -5,13 +5,13 @@ variable "vpc_id" {
 
 variable "public_subnet_ids" {
   description = "value of the public subnet ID"
-  type = string
+  type = list(string)
   
 }
 
 variable "private_subnet_ids" {
   description = "value of the private subnet ID"
-  type = string
+  type = list(string)
   
 }
 

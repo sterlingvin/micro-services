@@ -33,7 +33,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block = var.public_subnet_cidr
     gateway_id = aws_internet_gateway.igw.id
   }
 }
@@ -42,7 +42,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.main.id
 
   route {
-    cidr_block     = "0.0.0.0/0"
+    cidr_block     = var.private_route_cidr
     nat_gateway_id = aws_nat_gateway.nat.id
   }
 }
@@ -57,37 +57,5 @@ resource "aws_route_table_association" "private" {
   route_table_id = aws_route_table.private.id
 }
 
-# Outputs
-output "public_subnet_id" {
-  value = aws_subnet.public.id
-}
 
-output "private_subnet_ids" {
-  value = [aws_subnet.private.id] # return as a list.
-}
 
-# Variables
-variable "vpc_cidr" {
-  type    = string
-  default = "10.0.0.0/16"
-}
-
-variable "public_subnet_cidr" {
-  type    = string
-  default = "10.0.1.0/24"
-}
-
-variable "private_subnet_cidr" {
-  type    = string
-  default = "10.0.2.0/24"
-}
-
-variable "availability_zone_public" {
-  type = string
-  default = "us-east-1a"
-}
-
-variable "availability_zone_private" {
-    type = string
-    default = "us-east-1a"
-}

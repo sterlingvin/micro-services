@@ -36,3 +36,33 @@ variable "ecr_repo_url" {
   default     = "851725517396.dkr.ecr.us-east-1.amazonaws.com/user-service"
 
 }
+
+variable "availability_zone_public" {
+  type    = string
+  default = "ca-central-1a" # Add default value   
+  
+}
+
+variable "availability_zone_private" {
+  type    = string
+  default = "ca-central-1b" # Add default value   
+  
+} 
+
+
+
+variable "nat_gateway_id" {
+  type = string   
+  
+}
+
+variable "public_route_cidr" {
+  type = string   
+  default = "0.0.0.0/0"
+}
+
+variable "private_route_cidr" {
+  type = string   
+  default = "0.0.0.0/0"
+}
+

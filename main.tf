@@ -8,6 +8,10 @@ module "vpc" {
   vpc_cidr            = var.vpc_cidr
   public_subnet_cidr  = var.public_subnet_cidr
   private_subnet_cidr = var.private_subnet_cidr
+  public_route_cidr   = var.public_route_cidr
+  private_route_cidr  = var.private_route_cidr
+  availability_zone_public  = var.availability_zone_public
+  availability_zone_private = var.availability_zone_private
 }
 
 module "ecr" {
